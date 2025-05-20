@@ -1,0 +1,11 @@
+version: '3'
+
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./large_files:/app/large_files
+    environment:
+      - JUPYTER_TOKEN=ads509  # Set a token for Jupyter access
