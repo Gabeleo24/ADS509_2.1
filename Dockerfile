@@ -24,6 +24,11 @@ RUN python -m nltk.downloader punkt stopwords wordnet
 # Copy project files
 COPY . .
 
+# Copy data files from your local machine
+COPY /Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks /app/notebooks/
+COPY /Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks/M1\ Results /app/M1\ Results/
+COPY "/Users/home/Documents/GitHub/ADS509_2.1/Lyrics and Description EDA.ipynb" /app/
+
 # Create directories for data
 RUN mkdir -p /app/data/input
 RUN mkdir -p /app/data/processed

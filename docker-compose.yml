@@ -4,12 +4,19 @@ services:
   jupyter:
     build: .
     ports:
-      - "8889:8888"
+      - "8890:8888"  # Changed from 8889 to 8890
     volumes:
       - ./data/input:/app/data/input
       - ./data/processed:/app/data/processed
       - ./data/extracted:/app/data/extracted
       - ./notebooks:/app/notebooks
-      - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks/M1 Assignment Data.zip:/app/data/input/M1 Assignment Data.zip"
+      - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks:/app/notebooks"
+      - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks/M1 Results:/app/M1 Results"
+      - "/Users/home/Documents/GitHub/ADS509_2.1/Lyrics and Description EDA.ipynb:/app/Lyrics and Description EDA.ipynb"
     environment:
       - JUPYTER_TOKEN=ads509
+
+volumes:
+  ads509_data:
+  ads509_notebooks:
+  ads509_m1_results:
