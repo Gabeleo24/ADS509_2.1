@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  jupyter:
+    build: .
+    ports:
+      - "8889:8888"
+    volumes:
+      - ./data/input:/app/data/input
+      - ./data/processed:/app/data/processed
+      - ./data/extracted:/app/data/extracted
+      - ./notebooks:/app/notebooks
+      - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks/M1 Assignment Data.zip:/app/data/input/M1 Assignment Data.zip"
+    environment:
+      - JUPYTER_TOKEN=ads509
