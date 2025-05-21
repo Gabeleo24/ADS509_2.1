@@ -1,15 +1,12 @@
-version: '3'
-
 services:
   jupyter:
     build: .
     ports:
-      - "8890:8888"  # Changed from 8889 to 8890
+      - "8890:8888"
     volumes:
-      - ./data/input:/app/data/input
-      - ./data/processed:/app/data/processed
-      - ./data/extracted:/app/data/extracted
-      - ./notebooks:/app/notebooks
+      - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/data/input:/app/data/input"
+      - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/data/processed:/app/data/processed"
+      - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/data/extracted:/app/data/extracted"
       - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks:/app/notebooks"
       - "/Users/home/Documents/GitHub/ADS509_2.1/ADS509_2.1/notebooks/M1 Results:/app/M1 Results"
       - "/Users/home/Documents/GitHub/ADS509_2.1/Lyrics and Description EDA.ipynb:/app/Lyrics and Description EDA.ipynb"
