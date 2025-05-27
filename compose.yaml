@@ -1,0 +1,14 @@
+services:
+  jupyter:
+    build:
+      context: .
+      dockerfile: docker/Dockerfile
+    ports:
+      - "8889:8888"
+    volumes:
+      - /Users/home/Documents/GitHub/ADS509_2.1:/home/jovyan/work
+    command: start-notebook.py --NotebookApp.token='' --NotebookApp.password=''
+
+volumes:
+  jupyter-data:
+    name: jupyter-data
