@@ -1,22 +1,44 @@
-# ADS 509 Module 3: Group Comparison
+# ADS 509 Modules 3 & 4: Text Analysis and Political Classification
 
-A comprehensive text analysis project comparing lyrics and Twitter descriptions between two artists (Robyn and Cher) using natural language processing techniques. This project demonstrates group comparison analysis, descriptive statistics, unique word identification, and word cloud visualization.
+A comprehensive collection of text analysis projects for ADS 509, featuring both comparative text analysis and political text classification using advanced natural language processing techniques.
 
 ## Project Description
 
-This repository contains an assignment for ADS 509 Module 3, focusing on comparative text analysis. The project analyzes two distinct text corpora for each artist:
+This repository contains assignments for ADS 509 Modules 3 & 4:
+
+### Module 3: Group Comparison
+Comparative text analysis project analyzing two distinct text corpora for each artist (Robyn and Cher):
 - **Lyrics data**: Song lyrics from both artists
 - **Twitter data**: Follower descriptions from each artist's Twitter account
 
 The analysis employs various NLP techniques including tokenization, normalization, stopword removal, and statistical comparison to identify patterns and differences between the text groups.
 
+### Module 4: Political Naive Bayes
+Political text classification project using Naive Bayes algorithms to analyze and classify political content:
+- **Convention speeches**: 2020 Democratic and Republican convention speeches
+- **Congressional tweets**: Twitter data from congressional candidates
+
+This module demonstrates machine learning classification techniques, feature extraction, and political text analysis using supervised learning methods.
+
 ## Features
 
+### Module 3: Group Comparison
 - **Text Preprocessing**: Comprehensive text cleaning pipeline with tokenization and normalization
 - **Descriptive Statistics**: Detailed statistical analysis of token counts, lexical diversity, and frequency distributions
 - **Unique Word Analysis**: Identification of words unique to each corpus
 - **Word Cloud Visualization**: Visual representation of word frequency for all four corpora
+
+### Module 4: Political Naive Bayes
+- **Machine Learning Classification**: Naive Bayes classifier for political text analysis
+- **Feature Engineering**: Advanced feature extraction from political speeches and tweets
+- **Model Evaluation**: Performance metrics and accuracy assessment
+- **Political Text Analysis**: Insights into language patterns in political communication
+
+### Shared Infrastructure
 - **Dockerized Environment**: Consistent development environment with all dependencies pre-installed
+- **Automated Setup**: Cross-platform setup scripts for quick deployment
+- **Database Integration**: SQLite database support for large-scale text data
+- **Multi-Module Support**: Seamless switching between different analysis projects
 
 ## Prerequisites
 
@@ -45,7 +67,9 @@ For the fastest setup experience, use one of our automated setup scripts:
 git clone https://github.com/your-username/ADS509_2.1.git
 cd ADS509_2.1
 
-# 2. Place your 'M1 Assignment Data (1).zip' file in this directory
+# 2. Place your data files in this directory:
+#    - For Module 3: 'M1 Assignment Data (1).zip'
+#    - For Module 4: '2020_Conventions.db' and 'congressional_data.db'
 
 # 3. Run the automated setup
 python setup.py
@@ -57,7 +81,9 @@ python setup.py
 git clone https://github.com/your-username/ADS509_2.1.git
 cd ADS509_2.1
 
-# 2. Place your 'M1 Assignment Data (1).zip' file in this directory
+# 2. Place your data files in this directory:
+#    - For Module 3: 'M1 Assignment Data (1).zip'
+#    - For Module 4: '2020_Conventions.db' and 'congressional_data.db'
 
 # 3. Run the automated setup
 ./setup.sh
@@ -69,7 +95,9 @@ REM 1. Clone the repository
 git clone https://github.com/your-username/ADS509_2.1.git
 cd ADS509_2.1
 
-REM 2. Place your 'M1 Assignment Data (1).zip' file in this directory
+REM 2. Place your data files in this directory:
+REM    - For Module 3: 'M1 Assignment Data (1).zip'
+REM    - For Module 4: '2020_Conventions.db' and 'congressional_data.db'
 
 REM 3. Run the automated setup
 setup.bat
@@ -77,12 +105,12 @@ setup.bat
 
 The automated scripts will:
 - ✅ Check Docker installation and status
-- ✅ Verify the data file exists
-- ✅ Build the Docker environment
+- ✅ Detect and verify available data files for both modules
+- ✅ Build the Docker environment with all dependencies
 - ✅ Start all services
 - ✅ Wait for Jupyter Lab to be ready
-- ✅ Extract and organize the data
-- ✅ Verify the setup
+- ✅ Extract and organize the data (Module 3) and verify databases (Module 4)
+- ✅ Verify the setup for available modules
 - ✅ Open Jupyter Lab in your browser
 
 ### Manual Setup (Step-by-Step)
@@ -98,9 +126,20 @@ cd ADS509_2.1
 
 #### 2. Obtain the Data
 
-Download the required data file `M1 Assignment Data (1).zip` and place it in the project root directory. This file should contain:
-- Lyrics files for both artists
-- Twitter follower data files
+Download the required data files and place them in the project root directory:
+
+**For Module 3 (Group Comparison):**
+- `M1 Assignment Data (1).zip` containing:
+  - Lyrics files for both artists
+  - Twitter follower data files
+
+**For Module 4 (Political Naive Bayes):**
+- `2020_Conventions.db` - SQLite database with convention speeches
+- `congressional_data.db` - SQLite database with congressional tweets
+
+*Note: You can have data for one or both modules. The system will automatically detect and process available data.*
+
+📋 **For detailed data setup instructions, see [DATA_SETUP.md](DATA_SETUP.md)**
 
 #### 3. Build and Start the Environment
 
@@ -136,20 +175,33 @@ This will extract and organize the data files into the proper directory structur
 
 ### Running the Analysis
 
-1. **Open the Main Notebook**: Navigate to `Group Comparison copy.ipynb` in Jupyter Lab
-
+#### Module 3: Group Comparison
+1. **Open the Notebook**: Navigate to `Group Comparison copy.ipynb` in Jupyter Lab
 2. **Execute the Analysis**: Run the notebook cells sequentially to perform:
    - Data ingestion and preprocessing
    - Text tokenization and normalization
    - Descriptive statistical analysis
    - Unique word identification
    - Word cloud generation
-
 3. **View Results**: The notebook will generate:
    - Statistical comparisons between artist corpora
    - Lists of unique words for each corpus
    - Word cloud visualizations
    - Comparative analysis insights
+
+#### Module 4: Political Naive Bayes
+1. **Open the Notebook**: Navigate to `Module 4-Political Naive Bayes.ipynb` in Jupyter Lab
+2. **Execute the Analysis**: Run the notebook cells sequentially to perform:
+   - Database connection and data extraction
+   - Text preprocessing and feature engineering
+   - Naive Bayes model training
+   - Political text classification
+   - Model evaluation and analysis
+3. **View Results**: The notebook will generate:
+   - Classification accuracy metrics
+   - Most informative features for political classification
+   - Prediction results on congressional tweets
+   - Analysis of political language patterns
 
 ### Key Analysis Components
 
@@ -207,10 +259,14 @@ The project uses the following Python packages (automatically installed in Docke
 - **matplotlib**: Data visualization
 
 ### NLP Libraries
-- **nltk**: Natural language processing toolkit
-- **emoji**: Emoji handling and processing
-- **wordcloud**: Word cloud generation
-- **scikit-learn**: Machine learning and text analysis
+- **nltk**: Natural language processing toolkit with stopwords, tokenization, and classification
+- **emoji**: Emoji handling and processing for social media text
+- **wordcloud**: Word cloud generation for text visualization
+- **scikit-learn**: Machine learning and text analysis tools
+
+### Database Libraries
+- **sqlite3**: SQLite database connectivity for political text data
+- **pandas**: Data manipulation and analysis for structured data
 
 ### Development Environment
 - **jupyter/datascience-notebook**: Base Jupyter environment

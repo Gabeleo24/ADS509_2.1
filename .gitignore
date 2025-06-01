@@ -1,7 +1,10 @@
 # Data files
 *.zip
+*.db
 M1 Results/
 M1\ Assignment\ Data\ \(1\).zip
+2020_Conventions.db
+congressional_data.db
 
 # macOS system files
 .DS_Store

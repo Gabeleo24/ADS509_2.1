@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
 """
-ADS 509 Module 3: Cross-platform Automated Setup Script
-This script automates the entire setup process for the text analysis project
+ADS 509 Modules 3 & 4: Cross-platform Automated Setup Script
+This script automates the entire setup process for both:
+- Module 3: Group Comparison (text analysis project)
+- Module 4: Political Naive Bayes (political text classification)
 """
 
 import os
@@ -32,7 +34,11 @@ class SetupManager:
     def __init__(self):
         self.project_dir = Path.cwd()
         self.zip_file = self.project_dir / "M1 Assignment Data (1).zip"
-        
+        self.db_files = {
+            'conventions': self.project_dir / "2020_Conventions.db",
+            'congressional': self.project_dir / "congressional_data.db"
+        }
+
         # Disable colors on Windows if needed
         if platform.system() == 'Windows':
             Colors.disable_on_windows()
@@ -85,17 +91,32 @@ class SetupManager:
         self.print_success("Docker is installed and running")
         return True
     
-    def check_data_file(self):
-        """Check if the required zip file exists"""
-        self.print_status("Checking for data file...")
-        
-        if not self.zip_file.exists():
-            self.print_error(f"Data file '{self.zip_file.name}' not found in current directory.")
-            print("\nPlease ensure the zip file is in the same directory as this script.")
-            print("You can download it from your course materials or assignment portal.")
+    def check_data_files(self):
+        """Check if data files for either module exist"""
+        self.print_status("Checking for data files...")
+
+        module3_available = self.zip_file.exists()
+        module4_available = all(db_file.exists() for db_file in self.db_files.values())
+
+        if module3_available:
+            self.print_success("Module 3 data found: M1 Assignment Data (1).zip")
+        else:
+            self.print_warning("Module 3 data not found: M1 Assignment Data (1).zip")
+
+        if module4_available:
+            self.print_success("Module 4 data found: Database files")
+        else:
+            self.print_warning("Module 4 data not found: Missing database files")
+            for name, db_file in self.db_files.items():
+                if not db_file.exists():
+                    self.print_warning(f"  - Missing: {db_file.name}")
+
+        if not module3_available and not module4_available:
+            self.print_error("No data files found for either module!")
+            print("\nFor Module 3: Place 'M1 Assignment Data (1).zip' in this directory")
+            print("For Module 4: Place '2020_Conventions.db' and 'congressional_data.db' in this directory")
             return False
-        
-        self.print_success("Data file found")
+
         return True
     
     def build_environment(self):
@@ -229,7 +250,7 @@ class SetupManager:
             if not self.check_docker():
                 return False
             
-            if not self.check_data_file():
+            if not self.check_data_files():
                 return False
             
             if not self.build_environment():
