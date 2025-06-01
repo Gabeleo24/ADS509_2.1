@@ -135,3 +135,4 @@ echo Opening Jupyter Lab in your default browser...
 start http://localhost:8889/lab
 
 pause
+∏
