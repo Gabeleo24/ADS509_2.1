@@ -1,10 +1,10 @@
-# ADS 509 Modules 3 & 4: Text Analysis and Political Classification
+# ADS 509: Advanced Text Mining Projects
 
-A comprehensive collection of text analysis projects for ADS 509, featuring both comparative text analysis and political text classification using advanced natural language processing techniques.
+A comprehensive collection of text analysis projects for ADS 509, featuring comparative text analysis, political text classification, and topic modeling using advanced natural language processing techniques.
 
 ## Project Description
 
-This repository contains assignments for ADS 509 Modules 3 & 4:
+This repository contains assignments for ADS 509 Modules 3, 4, and 5:
 
 ### Module 3: Group Comparison
 Comparative text analysis project analyzing two distinct text corpora for each artist (Robyn and Cher):
@@ -20,6 +20,14 @@ Political text classification project using Naive Bayes algorithms to analyze an
 
 This module demonstrates machine learning classification techniques, feature extraction, and political text analysis using supervised learning methods.
 
+### Assignment 5.1: Topic Modeling
+Advanced topic modeling project comparing three different approaches to discover latent topics in text:
+- **NMF (Non-negative Matrix Factorization)**: Linear algebraic approach to topic modeling
+- **LSA (Latent Semantic Analysis)**: Dimensionality reduction using SVD for topic discovery
+- **LDA (Latent Dirichlet Allocation)**: Probabilistic topic modeling with Dirichlet distributions
+
+This assignment uses the Brown University corpus from NLTK to compare topic modeling approaches and evaluate their effectiveness against known document categories.
+
 ## Features
 
 ### Module 3: Group Comparison
@@ -33,6 +41,13 @@ This module demonstrates machine learning classification techniques, feature ext
 - **Feature Engineering**: Advanced feature extraction from political speeches and tweets
 - **Model Evaluation**: Performance metrics and accuracy assessment
 - **Political Text Analysis**: Insights into language patterns in political communication
+
+### Assignment 5.1: Topic Modeling
+- **Multiple Topic Models**: Implementation of NMF, LSA, and LDA approaches
+- **Model Comparison**: Systematic comparison of topic modeling techniques
+- **Brown Corpus Analysis**: Working with categorized academic text corpus
+- **Topic Interpretation**: Analysis and interpretation of discovered topics
+- **Visualization**: Topic distribution and comparison visualizations
 
 ### Shared Infrastructure
 - **Dockerized Environment**: Consistent development environment with all dependencies pre-installed
@@ -203,6 +218,24 @@ This will extract and organize the data files into the proper directory structur
    - Prediction results on congressional tweets
    - Analysis of political language patterns
 
+#### Assignment 5.1: Topic Modeling
+1. **Open the Notebook**: Navigate to `Topic Models.ipynb` in Jupyter Lab
+2. **Execute the Analysis**: Run the notebook cells sequentially to perform:
+   - Brown corpus exploration and preprocessing
+   - NMF topic model training and interpretation
+   - LSA topic model training and interpretation
+   - LDA topic model training and interpretation
+   - Comparative analysis of all three approaches
+3. **View Results**: The notebook will generate:
+   - Topic word distributions for each model
+   - Document-topic assignments and comparisons
+   - Visualizations of topic distributions
+   - Comprehensive analysis comparing model performance
+4. **Complete Analysis**: Fill in interpretation sections and provide insights on:
+   - Topic coherence and interpretability
+   - Alignment with Brown corpus categories
+   - Recommendations for different use cases
+
 ### Key Analysis Components
 
 #### Text Preprocessing Pipeline
@@ -227,11 +260,15 @@ my_pipeline = [str.lower, remove_emoji, remove_punctuation, tokenize, remove_sto
 ```
 ADS509_2.1/
 ├── README.md                           # This file
+├── ASSIGNMENT_5.1_README.md            # Topic modeling assignment documentation
 ├── setup.py                            # Cross-platform automated setup script
 ├── setup.sh                            # Linux/macOS automated setup script
 ├── setup.bat                           # Windows automated setup script
-├── Group Comparison copy.ipynb         # Main analysis notebook
-├── Group Comparison copy.pdf           # PDF version of notebook
+├── Group Comparison copy.ipynb         # Module 3 analysis notebook
+├── Group Comparison copy.pdf           # PDF version of Module 3 notebook
+├── Module 4-Political Naive Bayes.ipynb # Module 4 analysis notebook
+├── Module 4-Political Naive Bayes.pdf  # PDF version of Module 4 notebook
+├── Topic Models.ipynb                  # Assignment 5.1 topic modeling notebook
 ├── compose.yaml                        # Docker Compose configuration
 ├── docker/
 │   ├── Dockerfile                      # Custom Jupyter environment
