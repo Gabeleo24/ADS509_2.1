@@ -23,10 +23,10 @@ def test_notebook_json():
 def test_data_files():
     """Test if required data files exist"""
     required_files = [
-        '../M1 Results/lyrics/cher',
-        '../M1 Results/lyrics/robyn', 
-        '../M1 Results/twitter/cher_followers_data.txt',
-        '../M1 Results/twitter/robynkonichiwa_followers_data.txt',
+        '/Users/home/Documents/GitHub/ADS509_2.1/M1 Results/lyrics/cher',
+        '/Users/home/Documents/GitHub/ADS509_2.1/M1 Results/lyrics/robyn',
+        '/Users/home/Documents/GitHub/ADS509_2.1/M1 Results/twitter/cher_followers_data.txt',
+        '/Users/home/Documents/GitHub/ADS509_2.1/M1 Results/twitter/robynkonichiwa_followers_data.txt',
         'positive-words.txt',
         'negative-words.txt',
         'tidytext_sentiments.txt'
